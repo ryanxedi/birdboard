@@ -81,16 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    All ProjX
+                    {{ $project->title }}
                 </div>
-                <div class="links">
-                    @forelse ($projects as $project)
-                            <a href="{{ $project->path() }}">{{ $project->title }}</a><br>
-                    @empty
-                        No projects yet
-                    @endforelse
+                <div>
+                    {{ $project->description }}
                 </div>
-
             </div>
         </div>
     </body>
