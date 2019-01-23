@@ -23,6 +23,15 @@ class ProjectsController extends Controller
         return view('projects.show', compact('project'));
     }
 
+    public function create()
+    {
+        // if (auth()->user()->isNot($project->owner)) {
+        //     abort (403);
+        // }
+
+        return view('projects.create');
+    }
+
     public function store()
     {
         // validate
