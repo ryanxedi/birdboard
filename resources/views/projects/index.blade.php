@@ -4,8 +4,8 @@
 
     <header class="flex items-center mb-3 py-4">
         <div class="flex justify-between items-end w-full">
-            <h2 class="text-grey text-sm font-normal">My Projects</h2>
-            <a href="/projects/create" class="button">Add Project</a>
+            <h2 class="text-grey text-sm font-normal">My re:minders</h2>
+            <a href="/projects/create" class="button">Add a re:minder</a>
         </div>
     </header>
 
@@ -15,7 +15,7 @@
                 @include ('projects.card')
             </div>
         @empty
-            <div>No projects yet</div>
+            <div>No re:minders yet</div>
         @endforelse
     </main>    
 
