@@ -6,7 +6,7 @@
             <p class="text-grey text-sm font-normal">
                 <a href="/projects" class="text-grey text-sm font-normal">My re:minders</a> / {{ $project->title }}
             </p>
-            <a href="/projects/create" class="button">Add Re:minder</a>
+            <a href="/projects/create" class="button">Add a re:minder</a>
         </div>
     </header>
 
@@ -38,8 +38,17 @@
                 </div>
                 <div>
                     <h2 class="text-grey text-lg font-normal mb-3">Notes</h2>
-                    <!-- {{-- general notes --}} -->
-                    <textarea class="card w-full" style="min-height:200px">Lorem Ipsum</textarea>
+                    <form method="POST" action="{{ $project->path() }}">
+                        @csrf
+                        @method('PATCH')
+                        <textarea 
+                            name="notes" 
+                            class="card w-full mb-4" 
+                            style="min-height:200px" 
+                            placeholder="Any extra information you want to keep a note of?"
+                            >{{ $project->notes }}</textarea>
+                        <button type="submit" class="button">Save</button>
+                    </form>
                 </div>
             </div>
 

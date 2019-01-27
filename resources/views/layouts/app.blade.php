@@ -26,7 +26,7 @@
                 <div class="flex justify-between items-center py-3">
                     <h1>
                         <a class="navbar-brand" href="{{ url('/') }}">
-                        <img style="width:4em" src="/svg/logo.svg" alt="ProjeX"></a>
+                        <img style="height:55px" src="/svg/logo.svg" alt="re:mind logo"></a>
                     </h1>
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">

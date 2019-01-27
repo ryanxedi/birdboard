@@ -566,6 +566,11 @@ table {
  * @import "components/forms";
  */
 
+.section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .button {
   background-color: #4ca3ff;
   color: #fff;
