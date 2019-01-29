@@ -6,7 +6,7 @@
             <p class="text-grey text-sm font-normal">
                 <a href="/projects" class="text-grey text-sm font-normal">My re:minders</a> / {{ $project->title }}
             </p>
-            <a href="/projects/create" class="button">Add a re:minder</a>
+            <a href="{{ $project->path().'/edit' }}" class="button">Edit re:minder</a>
         </div>
     </header>
 
@@ -15,7 +15,6 @@
             <div class="lg:w-3/4 px-3 mb-8">
                 <div class="mb-6">
                     <h2 class="text-grey text-lg font-normal mb-3">Tasks</h2>
-                    <!-- {{-- tasks --}} -->
                     @foreach ($project->tasks as $task)
                         <div class="card mb-3">
                             <form method="POST" action="{{ $task->path() }}">
@@ -23,7 +22,7 @@
                                 @csrf
 
                                 <div class="flex">
-                                    <input name="body" class="w-full {{ $task->completed ? 'text-grey' : '' }}" value="{{ $task->body}}">
+                                    <input name="body" class="w-full {{ $task->completed ? 'text-grey line-through' : '' }}" value="{{ $task->body}}">
                                     <input name="completed" type="checkbox" onChange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
                                 </div>
                             </form>
